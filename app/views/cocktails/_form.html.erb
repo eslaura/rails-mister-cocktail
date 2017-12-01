@@ -1,7 +1,10 @@
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
+<div class="form">
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit "Create", class: "btn-medium" %>
+  <% end %>
 
-  <%= f.submit "Create", class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to "back home", cocktails_path  %>
+  <%= link_to "", cocktails_path, class: "btn-medium fa fa-home"  %>
+</div>

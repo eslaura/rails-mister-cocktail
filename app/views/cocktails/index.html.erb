@@ -1,20 +1,21 @@
+   <h1 class="cocktail_head"> List of Cocktails  </h1>
 
-<h1> List of Cocktails  </h1>
+  <p><%= link_to "", new_cocktail_path,  class: "btn-medium fa fa-glass" %></p>
 
-<p><%= link_to "new cocktail", new_cocktail_path  %></p>
-<div class="container">
+  <div class="container">
 
-  <div class="row">
+    <div class="row">
 
-      <% @cocktails.each do |cocktail| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-            <div class="card-category"><%= link_to cocktail.name, cocktail_path(cocktail)%></div>
-            <div class="card-description">
+        <% @cocktails.each do |cocktail| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path cocktail.photo %>');">
+              <div class="card-category"><%= link_to cocktail.name, cocktail_path(cocktail)%></div>
+              <div class="card-description">
+              </div>
             </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
           </div>
-        </div>
-      <% end %>
+        <% end %>
+    </div>
   </div>
-</div>
+
+

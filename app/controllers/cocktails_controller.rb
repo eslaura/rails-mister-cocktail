@@ -23,6 +23,9 @@ before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
   end
 
   def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+    redirect_to cocktails_path
   end
 
   private
@@ -32,6 +35,6 @@ before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :description, :photo, :photo_cache)
   end
 end
